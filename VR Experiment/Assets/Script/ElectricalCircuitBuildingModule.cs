@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class ElectricalCircuitBuildingModule : MonoBehaviour
 {
+
+    #region consts for electrical componens
+    public const string BATTERY = "BatteryDuracell";
+    //const string SWITCH = "LightSwitch";
+    #endregion
+
     public ElectricalComponent[] electricalComponents;
     public Transform[] inactivePosition;
     public Transform[] activePositions;
@@ -102,7 +108,7 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
     LineRenderer wireLineRenderer;
     public void createWireLoop()
     {
-        if (demonstration_level == 2)
+        if (demonstration_level >= 2)
         {
             if (electricalComponent1 == null)
             {
@@ -123,15 +129,20 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
 
         wireLineRenderer.positionCount = 4;
         wireLineRenderer.SetPositions(this.getWirePoints());
-        
+
+        if (electricalComponent1 != null)
+            changeWireColorBasedOnSwitch(electricalComponent1.GetComponent<LightSwitch>().switchState);
+
+        StartCoroutine(circuitConnected());
+
     }
 
     public void callCircuitDone()
     {
-        StartCoroutine(circuitDone());
+        StartCoroutine(nextDemonstration());
     }
 
-    IEnumerator circuitDone()
+    IEnumerator circuitConnected()
     {
         textInfo.text = "processing ..."; 
         yield return new WaitForSeconds(2);
@@ -140,42 +151,68 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
             case 1:
 
                 textInfo.text = "Short Circuit! Battery Explodes!";
-                yield return new WaitForSeconds(2);
+                
+                break;
+
+            case 2:
+                textInfo.text = "Short Circuit! Battery Explodes!";
+                
+                break;
+
+            case 3:
+                textInfo.text = "Diode In Circuit! TBD";
+                
+                break;
+
+            case 4:
+                textInfo.text = "LED in Circuit and Lights Up";
+                
+                break;
+
+            case 5:
+                textInfo.text = "Circuit in Series";
+
+                break;
+
+        }
+   
+    }
+
+    IEnumerator nextDemonstration()
+    {
+        switch (demonstration_level)
+        {
+            case 1:
                 resetBoard1();
                 demonstration_level = 2;
                 textInfo.text = "Demonstration " + demonstration_level;
                 yield return new WaitForSeconds(1);
                 textInfo.text = "";
                 demonstration2();
-
                 break;
 
             case 2:
-                textInfo.text = "Short Circuit! Battery Explodes!";
-                yield return new WaitForSeconds(2);
                 resetBoard2();
                 demonstration_level = 3;
                 textInfo.text = "Demonstration " + demonstration_level;
                 yield return new WaitForSeconds(1);
                 textInfo.text = "";
                 demonstration3();
-
                 break;
 
             case 3:
-                textInfo.text = "Diode In Circuit! TBD";
-                yield return new WaitForSeconds(2);
+                
                 resetBoard3();
                 demonstration_level = 4;
                 textInfo.text = "Demonstration " + demonstration_level;
                 yield return new WaitForSeconds(1);
                 textInfo.text = "";
                 demonstration4();
+
                 break;
 
             case 4:
-                textInfo.text = "LED in Circuit and Lights Up";
-                yield return new WaitForSeconds(2);
+                
                 resetBoard4();
                 demonstration_level = 5;
                 textInfo.text = "Demostration " + demonstration_level;
@@ -185,21 +222,20 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
                 break;
 
             case 5:
-                textInfo.text = "Circuit in Series";
-                yield return new WaitForSeconds(2);
                 resetBoard4();
                 demonstration_level = 5;
                 textInfo.text = "Demostration " + demonstration_level;
                 yield return new WaitForSeconds(1);
                 textInfo.text = "";
-                
+
                 //demonstration6();
-
                 break;
-
         }
-   
+
+        yield return null;
     }
+
+
 
     void resetBoard4()
     {

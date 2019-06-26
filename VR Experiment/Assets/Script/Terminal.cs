@@ -20,6 +20,9 @@ public class Terminal : MonoBehaviour
     {
         //put a ring around the positive side
         
+
+        if (transform.parent.gameObject.name != ElectricalCircuitBuildingModule.BATTERY+"(Clone)") return;
+
         if (electricalComponent.componentState == ElectricalComponent.ComponentState.active)
         {
             if (cloneRingSelector == null)
@@ -46,6 +49,9 @@ public class Terminal : MonoBehaviour
 
         //for demonstration 1 ...
         //get wire path ...
+
+        //if switch state is active and its ON
+
         ElectricalCircuitBuildingModule.getInstance().createWireLoop();
 
     }

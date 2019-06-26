@@ -21,6 +21,15 @@ public class ElectricalComponent : MonoBehaviour
         Debug.Log("Electrical component clicked "+ this.gameObject.name);
         transform.position = activeTransform.position;
         transform.localRotation = activeTransform.localRotation;
+        componentState = ComponentState.active;
+
+        //if its a battery and its active, then flip it ...
+        if (gameObject.name+"(Clone)" == ElectricalCircuitBuildingModule.BATTERY)
+        {
+            Debug.Log("Do you get clicked");
+            GetComponent<Battery>().actionPerformedOnClick();
+        }
+
 
     }
 
