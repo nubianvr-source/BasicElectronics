@@ -59,7 +59,18 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
     {
 
         if (wireLineRenderer != null)
-        {
+        {   
+            //if diode is in circuit, don't run the circuit ...
+            if (electricalComponent2 != null)
+            {
+                if (electricalComponent2.componentState == ElectricalComponent.ComponentState.active)
+                {
+                    Debug.Log("If diode is present, don't run the circuit!!!");
+                    return;
+                }
+            }
+            
+
             Color c1 = Color.green;
             Color c2 = Color.red;
             if (switchState == LightSwitch.SwitchState.on)
@@ -79,17 +90,20 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
                 //turnLED_Off();
             }
 
-            getInstance().turnLEDOnOff();
+            turnLEDOnOff();
 
         }
     }
 
     public void turnLEDOnOff()
     {
-        Debug.Log("Turn the lights On or Off");
+        
         //if the lamp is active ...
+        if (electricalComponents[3] != null) return;
+
         if (electricalComponents[3].componentState == ElectricalComponent.ComponentState.active)
         {
+            Debug.Log("Turn the lights On or Off");
             electricalComponents[3].gameObject.GetComponentInChildren<LightBulb>().turnOnOff();
         }
 
@@ -155,6 +169,8 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
                 break;
 
             case 2:
+                //TODO: check if switch is on ..
+
                 textInfo.text = "Short Circuit! Battery Explodes!";
                 
                 break;

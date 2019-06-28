@@ -51,8 +51,11 @@ public class Terminal : MonoBehaviour
         //get wire path ...
 
         //if switch state is active and its ON
-
-        ElectricalCircuitBuildingModule.getInstance().createWireLoop();
+        if (transform.parent.GetComponent<ElectricalComponent>().componentState == ElectricalComponent.ComponentState.active)
+        {
+            ElectricalCircuitBuildingModule.getInstance().createWireLoop();
+        }
+        
 
     }
 

@@ -19,7 +19,15 @@ public class Battery : MonoBehaviour
     public void actionPerformedOnClick()
     {
         Debug.Log("flip this ...");
-        transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -transform.rotation.z);
+        if (gameObject.GetComponent<ElectricalComponent>().componentState == ElectricalComponent.ComponentState.active)
+        {
+            transform.localRotation = Quaternion.Euler(-transform.localRotation.x,
+                                                       transform.localRotation.y,
+                                                       transform.localRotation.z
+                                                       );
+
+        }
+
 
 
     }
