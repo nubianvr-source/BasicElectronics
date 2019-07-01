@@ -90,21 +90,21 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
                 //turnLED_Off();
             }
 
-            turnLEDOnOff();
+            turnLEDOnOff(switchState);
 
         }
     }
 
-    public void turnLEDOnOff()
+    public void turnLEDOnOff(LightSwitch.SwitchState switchState)
     {
         
         //if the lamp is active ...
-        if (electricalComponents[3] != null) return;
+        if (electricalComponent3 == null) return;
 
-        if (electricalComponents[3].componentState == ElectricalComponent.ComponentState.active)
+        Debug.Log(electricalComponent3.componentState);
+        if (electricalComponent3.componentState == ElectricalComponent.ComponentState.active)
         {
-            Debug.Log("Turn the lights On or Off");
-            electricalComponents[3].gameObject.GetComponentInChildren<LightBulb>().turnOnOff();
+            electricalComponent3.gameObject.GetComponentInChildren<LightBulb>().turnOnOff(switchState);
         }
 
     }

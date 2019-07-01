@@ -14,24 +14,22 @@ public class LightBulb : MonoBehaviour
 
     public LightState lightState = LightState.off;
 
-    public void turnOnOff()
-    {
-        Debug.Log("do you get called");
-        if (lightState == LightState.on)
-        {
-            lightState = LightState.off;
-            turnOff();
-        }
-        else
+    public void turnOnOff(LightSwitch.SwitchState switchState)
+    {        
+        if (switchState == LightSwitch.SwitchState.on)
         {
             lightState = LightState.on;
             turnOn();
+        }
+        else
+        {
+            lightState = LightState.off;
+            turnOff();
         }
     }
 
     private void turnOn()
     {
-        Debug.Log("Turn on Please");
         ledState.text = "ON";
         GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
         Material m_BulbMat = GetComponent<MeshRenderer>().material;
@@ -41,7 +39,6 @@ public class LightBulb : MonoBehaviour
 
     private void turnOff()
     {
-        Debug.Log("Turn OFF Please");
         ledState.text = "OFF";
         GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
         Material m_BulbMat = GetComponent<MeshRenderer>().material;
