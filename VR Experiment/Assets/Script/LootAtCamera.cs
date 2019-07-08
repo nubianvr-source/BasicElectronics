@@ -20,7 +20,7 @@ public class LootAtCamera : MonoBehaviour
     void Update()
     {
 
-        //transform.LookAt(m_Camera);
+        transform.LookAt(m_Camera);
         
     }
 }

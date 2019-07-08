@@ -33,9 +33,12 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
     void Start()
     {
         instance = this;
+        BeginDemoVersion();
+
         //start the distin ...
         //DEMOSTRATION 1
         //Show only one battery and the position to put the battery
+        /*
         demonstration_level = 1;
         textInfo.text = "Demonstration "+ demonstration_level;
         electricalComponent = Instantiate(electricalComponents[0], inactivePosition[0].transform.position, Quaternion.identity);
@@ -43,9 +46,54 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
 
         electricalComponent.activeTransform = activePositions[0];
         electricalComponent.gameObject.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+        */
 
     }
 
+    void BeginDemoVersion()
+    {
+
+        //Instantiate a 3 volts Battery,Battery in the tool box, Switch, P-N Diode  bulb in the circuit
+        instantiateBatteryAtInactivePosition();
+        instantiateDemoActiveComponents();
+
+        drawWireInDemoCircuit();
+
+
+
+    }
+
+    void instantiateBatteryAtInactivePosition()
+    {
+
+        electricalComponent = Instantiate(electricalComponents[0], inactivePosition[0].transform.position, Quaternion.identity);
+        electricalComponent.componentState = ElectricalComponent.ComponentState.inactive;
+
+    }
+
+    void instantiateDemoActiveComponents()
+    {   
+        //switch created here ...
+        electricalComponent1 = Instantiate(electricalComponents[1], activePositions[1].transform.position, Quaternion.identity);
+        electricalComponent1.componentState = ElectricalComponent.ComponentState.active;
+
+        //diode created here ...
+        electricalComponent2 = Instantiate(electricalComponents[2], activePositions[2].transform.position, Quaternion.identity);
+        electricalComponent2.componentState = ElectricalComponent.ComponentState.active;
+
+        electricalComponent3 = Instantiate(electricalComponents[3], activePositions[3].transform.position, Quaternion.identity);
+        electricalComponent2.componentState = ElectricalComponent.ComponentState.active;
+
+    }
+
+
+    void drawWireInDemoCircuit()
+    {
+        createWireLoop();
+    }
+
+
+    //--------------------------------------------------------------------------------------------------------
     // Update is called once per frame
     void Update()
     {
@@ -147,7 +195,7 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
         if (electricalComponent1 != null)
             changeWireColorBasedOnSwitch(electricalComponent1.GetComponent<LightSwitch>().switchState);
 
-        StartCoroutine(circuitConnected());
+        //StartCoroutine(circuitConnected());
 
     }
 
