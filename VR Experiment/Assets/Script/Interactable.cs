@@ -53,6 +53,24 @@ public class Interactable : MonoBehaviour
 
             break;
 
+            case "Position":
+
+                if (BlackBoardModule.getInstance().content_stage == 4)
+                {
+                    GameObject responseText = GameObject.Find("response_text");
+                    responseText.SetActive(true);
+                    if (this.gameObject.name == "BatteryActive_pos")
+                    {
+                        responseText.GetComponent<TextMesh>().text = "Correct, we can place a battery there";
+                    }
+                    else
+                    {
+                        responseText.GetComponent<TextMesh>().text = "Incorrect, a component is already there";
+                    }
+                }
+
+                break;
+
             case "ButtonInteraction":
                 
                 //NextDemo nextDemo = objectPressed.GetComponent<NextDemo>();

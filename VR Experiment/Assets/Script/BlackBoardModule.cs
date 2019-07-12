@@ -58,16 +58,14 @@ public class BlackBoardModule : MonoBehaviour
         if (content_stage == 4)
         {
             //put rings around the active positions ...
-            Transform batterypos, switchPos, diodePoc, bulb;
-            batterypos = GameObject.Find("BatteryActive_pos").transform;
+            //Transform batterypos, switchPos, diodePoc, bulb;
+            //batterypos = GameObject.Find("BatteryActive_pos").transform;
 
+            //at this point ... 
             
 
         }
-
-
-
-
+        
         previousBoard = boardContent[content_stage];
 
 

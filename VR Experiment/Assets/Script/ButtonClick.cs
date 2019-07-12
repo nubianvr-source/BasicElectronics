@@ -52,12 +52,23 @@ public class ButtonClick : MonoBehaviour
            (this.gameObject.name == "btn_battery_q1"))
             {
 
-                //set color red else set color to green
+                Renderer rend = GetComponent<Renderer>();
+
+                //Set the main Color of the Material to red
+                rend.material.shader = Shader.Find("_Color");
+                rend.material.SetColor("_Color", Color.red);
 
             }
             else
             {
-                //set color to green ..
+                //set color to green ...
+                Renderer rend = GetComponent<Renderer>();
+
+                //Set the main Color of the Material to green
+                rend.material.shader = Shader.Find("_Color");
+                rend.material.SetColor("_Color", Color.green);
+                
+
             }
         }
 
