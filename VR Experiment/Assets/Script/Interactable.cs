@@ -42,7 +42,7 @@ public class Interactable : MonoBehaviour
             case "Terminal":
                 
                 Terminal terminal = objectPressed.GetComponent<Terminal>();
-                terminal.actionPerformedOnClick();
+                //terminal.actionPerformedOnClick(); remember to uncomment this back ..
             
             break;
 
@@ -88,9 +88,7 @@ public class Interactable : MonoBehaviour
                 
             break;
         }
-
-
-
+        
     }
 
     public void HoveredOff() {

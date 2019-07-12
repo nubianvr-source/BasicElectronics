@@ -10,26 +10,87 @@ public class ButtonClick : MonoBehaviour
     ElectricalCircuitBuildingModule electricalCircuitModule;
     public void actionPerformedClick()
     {
-
-        if ((this.gameObject.name == "btn_resistor_q1")
-            ||
-           (this.gameObject.name == "btn_battery_q1")){
-
-            //set color red else set color to green
-
-        }
-        else
+        string buttonName = this.gameObject.name;
+        switch (buttonName)
         {
-            //set color to green ..
+            case "ClickForNext":
+                GameObject responseText = GameObject.Find("response_text");
+                responseText.SetActive(false);
+                BlackBoardModule bbm = BlackBoardModule.getInstance();
+                bbm.nextDemo();
+                
+                break;
+
+            case "ToggleSwitch":
+                //switch clicked on ...
+                //find the switch in the scene ...
+                GameObject lightswitch = GameObject.Find(ElectricalCircuitBuildingModule.LIGHTSWITCH+"(Clone)");
+                lightswitch.GetComponent<LightSwitch>().onSwitchToggle();
+
+                break;
+
+            case "flip_battery":
+
+                GameObject myBattery = GameObject.Find(ElectricalCircuitBuildingModule.BATTERY + "(Clone)");
+                Debug.Log("Yet to flip this guy ...");
+                break;
+
+            case "flip_diode":
+
+                //get the diode likewise ...
+
+                break;
+
+            default:
+                break;
+        }
+
+        if (BlackBoardModule.getInstance().content_stage == 0)
+        {
+            if ((this.gameObject.name == "btn_resistor_q1")
+            ||
+           (this.gameObject.name == "btn_battery_q1"))
+            {
+
+                //set color red else set color to green
+
+            }
+            else
+            {
+                //set color to green ..
+            }
+        }
+
+        if (BlackBoardModule.getInstance().content_stage == 2)
+        {
+            GameObject responseText = GameObject.Find("response_text");
+            responseText.SetActive(true);
+
+            if (this.gameObject.name == "add_battery_q3")
+            {
+                responseText.GetComponent<TextMesh>().text = "Correct, a battery will \nprovide the current required \nto power the circuit";
+            }else 
+
+            if (this.gameObject.name == "add_resistor_q3")
+            {
+                responseText.GetComponent<TextMesh>().text = "Incorrect, a resistor is \nused to reduce the current \nflow in a circuit";
+            }else
+
+            if (this.gameObject.name == "add_capacitor_q3")
+            {
+                responseText.GetComponent<TextMesh>().text = "Incorrect, a capacitor is \nused to store current flow \nin a circuit";
+            }
+            else
+            {
+                responseText.GetComponent<TextMesh>().text = "Incorrect!";
+            }
+
         }
         
-
-        
-        //electricalCircuitModule = ElectricalCircuitBuildingModule.getInstance();
         
 
-        
-        //electricalCircuitModule.callCircuitDone();
+
+            
 
     }
 

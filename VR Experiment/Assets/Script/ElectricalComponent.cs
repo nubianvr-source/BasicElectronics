@@ -21,18 +21,19 @@ public class ElectricalComponent : MonoBehaviour
         Debug.Log("Electrical component clicked "+ this.gameObject.name);
         transform.position = activeTransform.position;
         transform.localRotation = activeTransform.localRotation;
-        
 
-        //if its a battery and its active, then flip it ...
         if (gameObject.name == ElectricalCircuitBuildingModule.BATTERY + "(Clone)")
         {
-            Debug.Log("Do you get clicked");
             GetComponent<Battery>().actionPerformedOnClick();
+        }
+
+        if (gameObject.name ==  ElectricalCircuitBuildingModule.LIGHTSWITCH + "(Clone)")
+        {
+           // GetComponent<LightSwitch>().actionPerformedOnClick();
         }
 
         componentState = ComponentState.active;
 
-        Debug.Log("Component name " + gameObject.name +" status: "+componentState);
 
     }
 

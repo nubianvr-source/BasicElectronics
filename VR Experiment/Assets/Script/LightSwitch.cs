@@ -6,7 +6,6 @@ public class LightSwitch : MonoBehaviour
 {
 
     public TextMesh textStatusInfo;
-
     
     public enum SwitchState
     {
@@ -15,6 +14,9 @@ public class LightSwitch : MonoBehaviour
     }
 
     public SwitchState switchState = SwitchState.off;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,20 @@ public class LightSwitch : MonoBehaviour
 
     public void actionPerformedOnClick()
     {
+
+        if (BlackBoardModule.getInstance().content_stage == 1)
+        {
+            //string itemNameClickedOn = 
+            
+        } 
+
+    }
+
+
+    public void onSwitchToggle()
+    {
+
+        
         if ( GetComponent<ElectricalComponent>().componentState == ElectricalComponent.ComponentState.active)
         {
             //check if its off turn on else turn off ...
@@ -57,11 +73,5 @@ public class LightSwitch : MonoBehaviour
         
 
     }
-
-
-
-
-
-
 
 }

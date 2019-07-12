@@ -55,7 +55,6 @@ public class Terminal : MonoBehaviour
         {
             ElectricalCircuitBuildingModule.getInstance().createWireLoop();
         }
-        
 
     }
 

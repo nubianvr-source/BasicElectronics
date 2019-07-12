@@ -5,8 +5,10 @@ using UnityEngine;
 public class BlackBoardModule : MonoBehaviour
 {
     public GameObject[] boardContent;
+    string[] componentsOnTable = { "Diode", "Switch", "2V Bulb" };
+    public string currentResponseExpected = "";
     GameObject previousBoard;
-    int content_stage = 0;
+    public int content_stage = 0;
 
     public static BlackBoardModule instance;
 
@@ -40,10 +42,27 @@ public class BlackBoardModule : MonoBehaviour
     {
         content_stage++;
         previousBoard.SetActive(false);
+        boardContent[content_stage].SetActive(true);
 
+        //the stage where you loop to put all items on table ...
         if (content_stage == 1)
         {
-            //then loop around different object ...
+            string textmeshtext = "Point to the " + componentsOnTable[0] + " in the circuit";
+            boardContent[1].GetComponentInChildren<TextMesh>().text = textmeshtext;
+
+            textmeshtext = "Point to the " + componentsOnTable[1] + " in the circuit";
+            textmeshtext = "Point to the " + componentsOnTable[2] + " in the circuit";
+        }
+
+
+        if (content_stage == 4)
+        {
+            //put rings around the active positions ...
+            Transform batterypos, switchPos, diodePoc, bulb;
+            batterypos = GameObject.Find("BatteryActive_pos").transform;
+
+            
+
         }
 
 

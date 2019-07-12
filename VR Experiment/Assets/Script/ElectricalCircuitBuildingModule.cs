@@ -7,6 +7,7 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
 
     #region consts for electrical componens
     public const string BATTERY = "BatteryDuracell";
+    public const string LIGHTSWITCH = "LightSwitch";
     //const string SWITCH = "LightSwitch";
     #endregion
 
@@ -105,7 +106,7 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
 
     public void changeWireColorBasedOnSwitch(LightSwitch.SwitchState switchState)
     {
-
+        /*
         if (wireLineRenderer != null)
         {   
             //if diode is in circuit, don't run the circuit ...
@@ -141,6 +142,7 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
             turnLEDOnOff(switchState);
 
         }
+        */
     }
 
     public void turnLEDOnOff(LightSwitch.SwitchState switchState)
@@ -325,7 +327,7 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
         Destroy(electricalComponent.gameObject);
     }
     
-    ElectricalComponent electricalComponent1;
+    public ElectricalComponent electricalComponent1;
     void demonstration2()
     {
         demonstration_level = 2;
