@@ -55,8 +55,11 @@ public class Interactable : MonoBehaviour
 
             case "ButtonInteraction":
                 
-                NextDemo nextDemo = objectPressed.GetComponent<NextDemo>();
-                nextDemo.actionPerformedClick();
+                //NextDemo nextDemo = objectPressed.GetComponent<NextDemo>();
+                //nextDemo.actionPerformedClick();
+
+                ButtonClick btnClicked = objectPressed.GetComponent<ButtonClick>();
+                btnClicked.actionPerformedClick();
 
                 break;
         }

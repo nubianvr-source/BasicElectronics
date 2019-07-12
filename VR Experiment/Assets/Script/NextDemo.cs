@@ -8,8 +8,13 @@ public class NextDemo : MonoBehaviour
     public void actionPerformedClick()
     {
 
-        electricalCircuitModule = ElectricalCircuitBuildingModule.getInstance();
-        electricalCircuitModule.callCircuitDone();
+        //electricalCircuitModule = ElectricalCircuitBuildingModule.getInstance();
+        //electricalCircuitModule.callCircuitDone();
+
+        BlackBoardModule bbm = BlackBoardModule.getInstance();
+        bbm.nextDemo();
+
+
 
     }
 
