@@ -6,6 +6,7 @@ public class ButtonClick : MonoBehaviour
 {
 
     //public string button_name;
+    public GameObject responseText;
 
     ElectricalCircuitBuildingModule electricalCircuitModule;
     public void actionPerformedClick()
@@ -14,8 +15,9 @@ public class ButtonClick : MonoBehaviour
         switch (buttonName)
         {
             case "ClickForNext":
-                GameObject responseText = GameObject.Find("response_text");
+                
                 responseText.SetActive(false);
+
                 BlackBoardModule bbm = BlackBoardModule.getInstance();
                 bbm.nextDemo();
                 
@@ -72,11 +74,12 @@ public class ButtonClick : MonoBehaviour
             }
         }
 
+        Debug.Log("content stage ... "+BlackBoardModule.getInstance().content_stage);
         if (BlackBoardModule.getInstance().content_stage == 2)
         {
-            GameObject responseText = GameObject.Find("response_text");
+            //GameObject responseText = GameObject.Find("response_text");
             responseText.SetActive(true);
-
+            Debug.Log("Do you get here ...");
             if (this.gameObject.name == "add_battery_q3")
             {
                 responseText.GetComponent<TextMesh>().text = "Correct, a battery will \nprovide the current required \nto power the circuit";
@@ -93,7 +96,7 @@ public class ButtonClick : MonoBehaviour
             }
             else
             {
-                responseText.GetComponent<TextMesh>().text = "Incorrect!";
+                //responseText.GetComponent<TextMesh>().text = "Incorrect!";
             }
 
         }

@@ -67,8 +67,6 @@ public class BlackBoardModule : MonoBehaviour
         }
         
         previousBoard = boardContent[content_stage];
-
-
     }
    
 }
