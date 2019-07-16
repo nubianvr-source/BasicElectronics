@@ -55,21 +55,32 @@ public class ButtonClick : MonoBehaviour
             {
 
                 Renderer rend = GetComponent<Renderer>();
+                Material m_Btn_mat = rend.material;
+                m_Btn_mat.color = Color.red;
 
                 //Set the main Color of the Material to red
-                rend.material.shader = Shader.Find("_Color");
-                rend.material.SetColor("_Color", Color.red);
+                //rend.material.shader = Shader.Find("_Color");
+                //rend.material.SetColor("_Color", Color.red);
+
+                Debug.Log("WRONG WRONG WRONG");
 
             }
             else
             {
+                //get what was clicked on ...
+                BlackBoardModule.getInstance().clickOnWhichCompoent(this.gameObject);
+
                 //set color to green ...
                 Renderer rend = GetComponent<Renderer>();
+                Material m_Btn_mat = rend.material;
+                m_Btn_mat.color = Color.green;
 
                 //Set the main Color of the Material to green
-                rend.material.shader = Shader.Find("_Color");
-                rend.material.SetColor("_Color", Color.green);
-                
+                //rend.material.shader = Shader.Find("_Color");
+                //rend.material.SetColor("_Color", Color.green);
+
+
+                Debug.Log("RIGHT RIGHT RIGHT");
 
             }
         }

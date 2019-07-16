@@ -68,5 +68,43 @@ public class BlackBoardModule : MonoBehaviour
         
         previousBoard = boardContent[content_stage];
     }
+
+    public void clickOnWhichCompoent(GameObject buttonComponent)
+    {
+        //hide the previous board content and show next board back and forth ...
+        boardContent[0].SetActive(false);
+        boardContent[1].SetActive(true);
+
+        string textmeshtext = "Point to the " + buttonComponent.name + " in the circuit";
+        boardContent[1].GetComponentInChildren<TextMesh>().text = textmeshtext;
+        
+
+        //what object are you expect the user to click on ...
+        if (buttonComponent.name == "btn_light_bulb_q1")
+        {
+            currentResponseExpected = ElectricalCircuitBuildingModule.LIGHTBULB;
+        }
+
+        if (buttonComponent.name == "btn_switch_q1")
+        {
+            currentResponseExpected = ElectricalCircuitBuildingModule.LIGHTSWITCH;
+        }
+
+        if (buttonComponent.name == "btn_diode_q1")
+        {
+            currentResponseExpected = ElectricalCircuitBuildingModule.DIODE;
+        }
+    }
+
+    public void getBacktoBoardContent1()
+    {
+        //hide the previous board content and show next board back and forth ...
+        boardContent[0].SetActive(true);
+        boardContent[1].SetActive(false);
+
+
+
+
+    }
    
 }

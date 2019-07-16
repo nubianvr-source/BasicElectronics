@@ -32,11 +32,30 @@ public class LightSwitch : MonoBehaviour
     public void actionPerformedOnClick()
     {
 
-        if (BlackBoardModule.getInstance().content_stage == 1)
+        Debug.Log("What is expected " + BlackBoardModule.getInstance().currentResponseExpected);
+        bool isCorrect = false;
+        if (this.gameObject.name == BlackBoardModule.getInstance().currentResponseExpected + "(Clone)")
         {
-            //string itemNameClickedOn = 
-            
-        } 
+            //correct ...
+            isCorrect = true;
+
+        }
+
+        if (isCorrect == true)
+        {
+            BlackBoardModule.getInstance().getBacktoBoardContent1();
+        }
+        else
+        {
+            ElectricalCircuitBuildingModule.getInstance().textInfo.text = "Try Again";
+        }
+
+
+        //if (BlackBoardModule.getInstance().content_stage == 1)
+        //{
+        //string itemNameClickedOn = 
+
+        //} 
 
     }
 

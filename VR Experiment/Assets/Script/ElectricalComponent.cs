@@ -19,8 +19,8 @@ public class ElectricalComponent : MonoBehaviour
     {
         
         Debug.Log("Electrical component clicked "+ this.gameObject.name);
-        transform.position = activeTransform.position;
-        transform.localRotation = activeTransform.localRotation;
+        //transform.position = activeTransform.position;
+        //transform.localRotation = activeTransform.localRotation;
 
         if (gameObject.name == ElectricalCircuitBuildingModule.BATTERY + "(Clone)")
         {
@@ -29,12 +29,37 @@ public class ElectricalComponent : MonoBehaviour
 
         if (gameObject.name ==  ElectricalCircuitBuildingModule.LIGHTSWITCH + "(Clone)")
         {
-           // GetComponent<LightSwitch>().actionPerformedOnClick();
+          // GetComponent<LightSwitch>().actionPerformedOnClick();
         }
 
-        componentState = ComponentState.active;
+        //check which stage u at ...
+        if (BlackBoardModule.getInstance().content_stage == 0)
+        {
+
+            //what is expected ...
+            Debug.Log("What is expected " + BlackBoardModule.getInstance().currentResponseExpected);
+            bool isCorrect = false;
+            if (this.gameObject.name == BlackBoardModule.getInstance().currentResponseExpected+"(Clone)")
+            {
+                //correct ...
+                isCorrect = true;
+                
+            }
+
+            if (isCorrect == true)
+            {
+                BlackBoardModule.getInstance().getBacktoBoardContent1();
+            }
+            else
+            {
+                ElectricalCircuitBuildingModule.getInstance().textInfo.text = "Try Again";
+            }
+            
+        }
 
 
+        //componentState = ComponentState.active;
+        
     }
 
     public void actionPerformedOnHover()

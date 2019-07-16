@@ -8,6 +8,10 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
     #region consts for electrical componens
     public const string BATTERY = "BatteryDuracell";
     public const string LIGHTSWITCH = "LightSwitch";
+    public const string LIGHTBULB = "LightBulb";
+    public const string DIODE = "Diode";
+    public const string WIRE = "Wire";
+
     //const string SWITCH = "LightSwitch";
     #endregion
 
