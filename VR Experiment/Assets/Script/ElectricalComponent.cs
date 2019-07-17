@@ -46,6 +46,13 @@ public class ElectricalComponent : MonoBehaviour
                 
             }
 
+            if (this.gameObject.name == BlackBoardModule.getInstance().currentResponseExpected)
+            {
+                //correct ...
+                isCorrect = true;
+
+            }
+
             if (isCorrect == true)
             {
                 BlackBoardModule.getInstance().getBacktoBoardContent1();
