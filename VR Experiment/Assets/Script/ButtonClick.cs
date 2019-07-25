@@ -15,7 +15,7 @@ public class ButtonClick : MonoBehaviour
         switch (buttonName)
         {
             case "ClickForNext":
-                
+                responseText.GetComponent<TextMesh>().text = "";
                 responseText.SetActive(false);
 
                 BlackBoardModule bbm = BlackBoardModule.getInstance();
@@ -34,7 +34,8 @@ public class ButtonClick : MonoBehaviour
             case "flip_battery":
 
                 GameObject myBattery = GameObject.Find(ElectricalCircuitBuildingModule.BATTERY + "(Clone)");
-                Debug.Log("Yet to flip this guy ...");
+                myBattery.GetComponent<Battery>().flipBattery();
+
                 break;
 
             case "flip_diode":
@@ -57,13 +58,7 @@ public class ButtonClick : MonoBehaviour
                 Renderer rend = GetComponent<Renderer>();
                 Material m_Btn_mat = rend.material;
                 m_Btn_mat.color = Color.red;
-
-                //Set the main Color of the Material to red
-                //rend.material.shader = Shader.Find("_Color");
-                //rend.material.SetColor("_Color", Color.red);
-
-                Debug.Log("WRONG WRONG WRONG");
-
+                
             }
             else
             {
@@ -75,12 +70,6 @@ public class ButtonClick : MonoBehaviour
                 Material m_Btn_mat = rend.material;
                 m_Btn_mat.color = Color.green;
 
-                //Set the main Color of the Material to green
-                //rend.material.shader = Shader.Find("_Color");
-                //rend.material.SetColor("_Color", Color.green);
-
-
-                Debug.Log("RIGHT RIGHT RIGHT");
 
             }
         }
@@ -108,6 +97,48 @@ public class ButtonClick : MonoBehaviour
             else
             {
                 //responseText.GetComponent<TextMesh>().text = "Incorrect!";
+            }
+        }
+
+        if (BlackBoardModule.getInstance().content_stage == 7)
+        {
+            responseText.SetActive(true);
+            
+            Debug.Log("Stage 7 actions we go we go");
+            if (this.gameObject.name == "terminal_wrong_q8")
+            {
+                Debug.Log("First option correct?");
+                responseText.GetComponent<TextMesh>().text = "Correct, a battery will provide \nthe current required to power \nthe circuit";
+            }
+            else
+            if (this.gameObject.name == "wrong_battery_q8")
+            {
+                responseText.GetComponent<TextMesh>().text = "Incorrect, a 3 volts battery generates \nenough electricity to light up \na 2 volts bulb";
+            }
+            else
+            if (this.gameObject.name == "switch_off_q8")
+            {
+                responseText.GetComponent<TextMesh>().text = "Incorrect, remember you turned on \nthe switch to activate the circuit.";
+            }
+        }
+
+        if (BlackBoardModule.getInstance().content_stage == 8)
+        {
+            responseText.SetActive(true);
+            
+            if (this.gameObject.name == "blue_button_press_q9")
+            {
+                responseText.GetComponent<TextMesh>().text = "Correct, flipping the terminal \nwill allow the current flow";
+            }
+            else
+           if (this.gameObject.name == "removing_battery_q9")
+            {
+                responseText.GetComponent<TextMesh>().text = "Incorrect, that will remove the \nsource of electrical energy";
+            }
+            else
+           if (this.gameObject.name == "turn_off_switch_q9")
+            {
+                responseText.GetComponent<TextMesh>().text = "Incorrect, turning off the switch\n will prevent current from flowing \nin the circuit";
             }
 
         }

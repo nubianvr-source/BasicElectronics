@@ -37,7 +37,6 @@ public class ElectricalComponent : MonoBehaviour
         {
 
             //what is expected ...
-            Debug.Log("What is expected " + BlackBoardModule.getInstance().currentResponseExpected);
             bool isCorrect = false;
             if (this.gameObject.name == BlackBoardModule.getInstance().currentResponseExpected+"(Clone)")
             {

@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 162160661}
   - component: {fileID: 162160660}
   m_Layer: 9
-  m_Name: add_capacitor_q3
+  m_Name: turn_off_switch_q9
   m_TagString: ButtonInteraction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 187528754}
   - component: {fileID: 187528753}
   m_Layer: 9
-  m_Name: add_battery_q3
+  m_Name: blue_button_press_q9
   m_TagString: ButtonInteraction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1114,19 +1114,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ea1db4c12cad23341acfc69e414faf23, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ea1db4c12cad23341acfc69e414faf23, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7082252
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ea1db4c12cad23341acfc69e414faf23, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ea1db4c12cad23341acfc69e414faf23, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70598674
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ea1db4c12cad23341acfc69e414faf23, type: 3}
       propertyPath: m_RootOrder
@@ -1138,7 +1138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ea1db4c12cad23341acfc69e414faf23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90.18101
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ea1db4c12cad23341acfc69e414faf23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1592,7 +1592,7 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 45
+  m_FontSize: 35
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -1740,6 +1740,7 @@ GameObject:
   - component: {fileID: 440285408}
   - component: {fileID: 440285407}
   - component: {fileID: 440285406}
+  - component: {fileID: 440285410}
   m_Layer: 9
   m_Name: flip_diode
   m_TagString: ButtonInteraction
@@ -1805,7 +1806,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b7b2826bcea14ed468ab35f491965475, type: 2}
+  - {fileID: 2100000, guid: 528e3c91d2666944aadc51d74dcaf450, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1833,6 +1834,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440285404}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &440285410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440285404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7f712a326881b4cb7fd010b01769a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  responseText: {fileID: 419388481}
 --- !u!1 &446699624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,7 +2040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &525938901
 Transform:
   m_ObjectHideFlags: 0
@@ -2183,7 +2197,6 @@ GameObject:
   m_Component:
   - component: {fileID: 589174188}
   - component: {fileID: 589174187}
-  - component: {fileID: 589174189}
   m_Layer: 0
   m_Name: BatteryActive_pos
   m_TagString: Untagged
@@ -2219,19 +2232,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
---- !u!65 &589174189
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589174186}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.51, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &589559643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,7 +2784,7 @@ GameObject:
   - component: {fileID: 636562596}
   - component: {fileID: 636562595}
   m_Layer: 9
-  m_Name: add_resistor_q3
+  m_Name: wrong_battery_q8
   m_TagString: ButtonInteraction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3396,10 +3396,12 @@ GameObject:
   - component: {fileID: 834396011}
   - component: {fileID: 834396014}
   - component: {fileID: 834396013}
+  - component: {fileID: 834396015}
   - component: {fileID: 834396012}
-  m_Layer: 0
-  m_Name: Quad
-  m_TagString: Untagged
+  - component: {fileID: 834396016}
+  m_Layer: 9
+  m_Name: battery_active_position
+  m_TagString: Position
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3413,25 +3415,23 @@ Transform:
   m_GameObject: {fileID: 834396010}
   m_LocalRotation: {x: -0, y: -0.72162694, z: -0, w: 0.69228214}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8281, y: 1.8281, z: 1.8281}
+  m_LocalScale: {x: 0.77443796, y: 1.8281, z: 1.8281}
   m_Children: []
   m_Father: {fileID: 589174188}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -92.378006, z: 0}
---- !u!64 &834396012
-MeshCollider:
+--- !u!114 &834396012
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834396010}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f833dd5408dd884fb35ee0911da6a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &834396013
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3449,7 +3449,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 120f6bfa2235d8d4d991271349342d62, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3477,6 +3477,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834396010}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &834396015
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834396010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000006, y: 1.0000004, z: 0.00000025311448}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &834396016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834396010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a314ba789d71b4aa199a399610c6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &841893055
 GameObject:
   m_ObjectHideFlags: 0
@@ -3492,7 +3517,7 @@ GameObject:
   - component: {fileID: 841893058}
   - component: {fileID: 841893057}
   m_Layer: 9
-  m_Name: add_resistor_q3
+  m_Name: removing_battery_q9
   m_TagString: ButtonInteraction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3941,7 +3966,7 @@ PrefabInstance:
     - target: {fileID: 239702293709083442, guid: c53c11c1e267d5f4f80aae4747a0fa6d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 904458774596005743, guid: c53c11c1e267d5f4f80aae4747a0fa6d,
         type: 3}
@@ -3996,6 +4021,11 @@ PrefabInstance:
     - target: {fileID: 904458774596005743, guid: c53c11c1e267d5f4f80aae4747a0fa6d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735070411629724763, guid: c53c11c1e267d5f4f80aae4747a0fa6d,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5274,6 +5304,7 @@ GameObject:
   - component: {fileID: 1422046001}
   - component: {fileID: 1422046000}
   - component: {fileID: 1422045999}
+  - component: {fileID: 1422046003}
   m_Layer: 9
   m_Name: flip_battery
   m_TagString: ButtonInteraction
@@ -5367,6 +5398,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422045997}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1422046003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422045997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7f712a326881b4cb7fd010b01769a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  responseText: {fileID: 419388481}
 --- !u!1 &1441578313
 GameObject:
   m_ObjectHideFlags: 0
@@ -5382,7 +5426,7 @@ GameObject:
   - component: {fileID: 1441578316}
   - component: {fileID: 1441578315}
   m_Layer: 9
-  m_Name: add_battery_q3
+  m_Name: terminal_wrong_q8
   m_TagString: ButtonInteraction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5681,7 +5725,7 @@ GameObject:
   - component: {fileID: 1515170236}
   - component: {fileID: 1515170235}
   m_Layer: 0
-  m_Name: question_3
+  m_Name: question_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6523,7 +6567,7 @@ GameObject:
   - component: {fileID: 1777825385}
   - component: {fileID: 1777825384}
   m_Layer: 9
-  m_Name: add_capacitor_q3
+  m_Name: switch_off_q8
   m_TagString: ButtonInteraction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8113,6 +8157,12 @@ MonoBehaviour:
   - {fileID: 1973343867}
   - {fileID: 1820007952}
   - {fileID: 160388315}
+  - {fileID: 741882705}
+  - {fileID: 1544116474}
+  - {fileID: 525938900}
+  - {fileID: 1198151851}
+  - {fileID: 1722498064}
+  - {fileID: 1107944875}
   currentResponseExpected: 
   content_stage: 0
 --- !u!4 &6469170873564790486 stripped
