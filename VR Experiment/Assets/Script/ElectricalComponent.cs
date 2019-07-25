@@ -32,6 +32,11 @@ public class ElectricalComponent : MonoBehaviour
           // GetComponent<LightSwitch>().actionPerformedOnClick();
         }
 
+        if (gameObject.name == ElectricalCircuitBuildingModule.DIODE + "(Clone)")
+        {
+            GetComponent<Diode>().actionPerformedOnClick();
+        }
+
         //check which stage u at ...
         if (BlackBoardModule.getInstance().content_stage == 0)
         {

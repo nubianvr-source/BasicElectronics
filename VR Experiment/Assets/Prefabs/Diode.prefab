@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6218838684522496144}
   - component: {fileID: 3352399642447009661}
   - component: {fileID: 4284048094572380408}
+  - component: {fileID: 6765393602001235173}
   m_Layer: 9
   m_Name: Diode
   m_TagString: ElectricalComponent
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c17aac0613537f447938c7097686187a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,5 +119,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a314ba789d71b4aa199a399610c6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6765393602001235173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306067667424478830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c06405b111b41a4f992818e46d4c16f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

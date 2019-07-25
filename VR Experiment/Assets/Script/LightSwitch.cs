@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightSwitch : MonoBehaviour
 {
 
-    public TextMesh textStatusInfo;
+    //public TextMesh textStatusInfo;
     
     public enum SwitchState
     {
@@ -32,7 +32,7 @@ public class LightSwitch : MonoBehaviour
     public void actionPerformedOnClick()
     {
 
-        Debug.Log("What is expected " + BlackBoardModule.getInstance().currentResponseExpected);
+        //Debug.Log("What is expected " + BlackBoardModule.getInstance().currentResponseExpected);
         bool isCorrect = false;
         if (this.gameObject.name == BlackBoardModule.getInstance().currentResponseExpected + "(Clone)")
         {
@@ -70,12 +70,12 @@ public class LightSwitch : MonoBehaviour
             if (switchState == SwitchState.off)
             {
                 switchState = SwitchState.on;
-                textStatusInfo.text = "ON";
+                //textStatusInfo.text = "ON";
             }
             else
             {
                 switchState = SwitchState.off;
-                textStatusInfo.text = "OFF";
+                //textStatusInfo.text = "OFF";
             }
         }else
         {
@@ -86,7 +86,7 @@ public class LightSwitch : MonoBehaviour
         }
         
 
-        Debug.Log("Switch Status " + textStatusInfo.text);
+        //Debug.Log("Switch Status " + textStatusInfo.text);
 
         ElectricalCircuitBuildingModule.getInstance().changeWireColorBasedOnSwitch(switchState);
         

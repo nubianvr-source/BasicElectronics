@@ -32,15 +32,23 @@ public class ButtonClick : MonoBehaviour
                 break;
 
             case "flip_battery":
-
-                GameObject myBattery = GameObject.Find(ElectricalCircuitBuildingModule.BATTERY + "(Clone)");
-                myBattery.GetComponent<Battery>().flipBattery();
-
+                if (BlackBoardModule.getInstance().content_stage <= 9)
+                {
+                    GameObject myBattery = GameObject.Find(ElectricalCircuitBuildingModule.BATTERY + "(Clone)");
+                    myBattery.GetComponent<Battery>().flipBattery();
+                }
+                
                 break;
 
             case "flip_diode":
 
                 //get the diode likewise ...
+                if (BlackBoardModule.getInstance().content_stage == 10)
+                {
+                    GameObject diode = GameObject.Find(ElectricalCircuitBuildingModule.DIODE+ "(Clone)");
+                    diode.GetComponent<Diode>().flipDiode();
+                }
+
 
                 break;
 

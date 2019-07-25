@@ -110,7 +110,7 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
 
     public void changeWireColorBasedOnSwitch(LightSwitch.SwitchState switchState)
     {
-        /*
+        
         if (wireLineRenderer != null)
         {   
             //if diode is in circuit, don't run the circuit ...
@@ -118,8 +118,12 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
             {
                 if (electricalComponent2.componentState == ElectricalComponent.ComponentState.active)
                 {
-                    Debug.Log("If diode is present, don't run the circuit!!!");
-                    return;
+                    GameObject diode = GameObject.Find(ElectricalCircuitBuildingModule.DIODE + "(Clone)");
+                    
+                    if (diode.GetComponent<Diode>().flipped)
+                    {
+                        return;
+                    }
                 }
             }
             
@@ -146,7 +150,7 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
             turnLEDOnOff(switchState);
 
         }
-        */
+     
     }
 
     public void turnLEDOnOff(LightSwitch.SwitchState switchState)

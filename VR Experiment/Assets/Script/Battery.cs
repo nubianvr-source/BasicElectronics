@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Battery : MonoBehaviour
 {
+    public bool flipped = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +47,8 @@ public class Battery : MonoBehaviour
     {
         //flip only if battery is active ...
         Debug.Log("flip this ...");
-        
+        flipped = !flipped;
+
         zAxis = -zAxis;
         transform.Rotate(0f, 0f, zAxis, Space.Self);
 
