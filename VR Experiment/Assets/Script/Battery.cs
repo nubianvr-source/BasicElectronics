@@ -54,6 +54,8 @@ public class Battery : MonoBehaviour
 
         Debug.Log("Current rotation values\n x-" + transform.localRotation.x + " y- " + transform.localRotation.y + " z- " + transform.localRotation.z);
 
+        ElectricalCircuitBuildingModule.getInstance().onBatteryFlipped();
+
     }
     
 }

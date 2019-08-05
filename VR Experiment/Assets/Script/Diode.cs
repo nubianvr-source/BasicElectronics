@@ -38,5 +38,9 @@ public class Diode : MonoBehaviour
             m_diodeMat.SetColor("_Color", Color.blue);
 
         }
+
+        ElectricalCircuitBuildingModule.getInstance().onDiodeFlipped();
+
+
     }
 }
