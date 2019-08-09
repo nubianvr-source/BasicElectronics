@@ -40,6 +40,8 @@ public class Battery : MonoBehaviour
         GameObject ringSelector = GameObject.Find("RingSelector");
         ringSelector.GetComponent<Renderer>().enabled = false;
 
+        BlackBoardModule.getInstance().showNextButton();
+
     }
 
     float zAxis = 180f;

@@ -30,12 +30,14 @@ public class Diode : MonoBehaviour
         {
             Material m_diodeMat= GetComponent<MeshRenderer>().material;
             m_diodeMat.SetColor("_Color", Color.red);
+            GetComponentInChildren<TextMesh>().text = "Reverse Bias";
             
         }
         else
         {
             Material m_diodeMat = GetComponent<MeshRenderer>().material;
             m_diodeMat.SetColor("_Color", Color.blue);
+            GetComponentInChildren<TextMesh>().text = "Forward Bias";
 
         }
 

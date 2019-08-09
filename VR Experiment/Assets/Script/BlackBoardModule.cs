@@ -58,6 +58,11 @@ public class BlackBoardModule : MonoBehaviour
             textmeshtext = "Point to the " + componentsOnTable[2] + " in the circuit";
         }
 
+        if (content_stage == 3)
+        {
+            StartCoroutine(showNextAfter2Secs());
+        }
+
 
         if (content_stage == 4)
         {
@@ -71,6 +76,34 @@ public class BlackBoardModule : MonoBehaviour
         }
         
         previousBoard = boardContent[content_stage];
+    }
+
+    IEnumerator showNextAfter2Secs()
+    {
+        yield return new WaitForSeconds(2);
+        showNextButton();
+    }
+
+    public void showNextButton()
+    {
+        //show the next button ...
+        GameObject nextButton = GameObject.Find("ClickForNext");
+        MeshRenderer[] meshrenderers = nextButton.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer mr in meshrenderers)
+        {
+            mr.enabled = true;
+        }
+    }
+
+    public void hideNextButton()
+    {
+        //hide Next button ...
+        GameObject nextButton = GameObject.Find("ClickForNext");
+        MeshRenderer[] meshrenderers = nextButton.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer mr in meshrenderers)
+        {
+            mr.enabled = false;
+        }
     }
 
     public void clickOnWhichCompoent(GameObject buttonComponent)

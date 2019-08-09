@@ -62,6 +62,7 @@ public class Interactable : MonoBehaviour
                     if (this.gameObject.name == "battery_active_position")
                     {
                         ElectricalCircuitBuildingModule.getInstance().textInfo.text = "Correct, we can place a battery there";
+                        BlackBoardModule.getInstance().showNextButton();
                     }
                     else
                     {

@@ -7,6 +7,7 @@ public class ButtonClick : MonoBehaviour
 
     //public string button_name;
     public GameObject responseText;
+    private static int buttonCompletionCheckSum = 0;
 
     ElectricalCircuitBuildingModule electricalCircuitModule;
     public void actionPerformedClick()
@@ -17,8 +18,9 @@ public class ButtonClick : MonoBehaviour
             case "ClickForNext":
                 responseText.GetComponent<TextMesh>().text = "";
                 responseText.SetActive(false);
-
+                
                 BlackBoardModule bbm = BlackBoardModule.getInstance();
+                bbm.hideNextButton();
                 bbm.nextDemo();
                 
                 break;
@@ -47,6 +49,10 @@ public class ButtonClick : MonoBehaviour
                 {
                     GameObject diode = GameObject.Find(ElectricalCircuitBuildingModule.DIODE+ "(Clone)");
                     diode.GetComponent<Diode>().flipDiode();
+
+                    if (BlackBoardModule.getInstance().content_stage == 5)
+                        BlackBoardModule.getInstance().showNextButton();
+
                 }
 
 
@@ -77,21 +83,38 @@ public class ButtonClick : MonoBehaviour
                 Renderer rend = GetComponent<Renderer>();
                 Material m_Btn_mat = rend.material;
                 m_Btn_mat.color = Color.green;
+                buttonCompletionCheckSum++;
 
+
+            }
+
+            if (buttonCompletionCheckSum == 4)
+            {
+                //show the next button ...
+                BlackBoardModule.getInstance().showNextButton();
 
             }
         }
 
-        Debug.Log("content stage ... "+BlackBoardModule.getInstance().content_stage);
         if (BlackBoardModule.getInstance().content_stage == 2)
         {
-            //GameObject responseText = GameObject.Find("response_text");
+            
             responseText.SetActive(true);
-            Debug.Log("Do you get here ...");
+            
             if (this.gameObject.name == "add_battery_q3")
             {
                 responseText.GetComponent<TextMesh>().text = "Correct, a battery will \nprovide the current required \nto power the circuit";
-            }else 
+
+                GameObject nextButton = GameObject.Find("ClickForNext");
+                MeshRenderer[] meshrenderers = nextButton.GetComponentsInChildren<MeshRenderer>();
+                foreach (MeshRenderer mr in meshrenderers)
+                {
+                    mr.enabled = true;
+                }
+
+
+            }
+            else 
 
             if (this.gameObject.name == "add_resistor_q3")
             {
@@ -117,6 +140,8 @@ public class ButtonClick : MonoBehaviour
             {
                 Debug.Log("First option correct?");
                 responseText.GetComponent<TextMesh>().text = "Correct, a battery will provide \nthe current required to power \nthe circuit";
+
+                BlackBoardModule.getInstance().showNextButton();
             }
             else
             if (this.gameObject.name == "wrong_battery_q8")
@@ -137,6 +162,7 @@ public class ButtonClick : MonoBehaviour
             if (this.gameObject.name == "blue_button_press_q9")
             {
                 responseText.GetComponent<TextMesh>().text = "Correct, flipping the terminal \nwill allow the current flow";
+                BlackBoardModule.getInstance().showNextButton();
             }
             else
            if (this.gameObject.name == "removing_battery_q9")
