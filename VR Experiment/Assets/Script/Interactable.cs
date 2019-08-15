@@ -47,9 +47,13 @@ public class Interactable : MonoBehaviour
             break;
 
             case "Switch":
-            
+                
                 LightSwitch lightSwitch = gameObject.GetComponent<LightSwitch>();
-                lightSwitch.actionPerformedOnClick();
+                if (BlackBoardModule.getInstance().content_stage == 0)
+                {
+                    lightSwitch.actionPerformedOnClick();
+                }
+                
 
             break;
 

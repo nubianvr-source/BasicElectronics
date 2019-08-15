@@ -1,0 +1,9 @@
+﻿{
+    "name": "NubianTests",
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ]
+}

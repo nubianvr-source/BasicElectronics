@@ -348,9 +348,12 @@ GameObject:
   m_Component:
   - component: {fileID: 143484952}
   - component: {fileID: 143484953}
-  m_Layer: 0
-  m_Name: pnt2
-  m_TagString: Untagged
+  - component: {fileID: 143484954}
+  - component: {fileID: 143484956}
+  - component: {fileID: 143484955}
+  m_Layer: 9
+  m_Name: Wire
+  m_TagString: ElectricalComponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,6 +384,45 @@ Halo:
     serializedVersion: 2
     rgba: 4280090368
   m_Size: 0.5
+--- !u!65 &143484954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143484951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3, y: 1, z: 1}
+  m_Center: {x: 1.74, y: 0, z: 0}
+--- !u!114 &143484955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143484951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367922edaf9f6f947acecf7371839387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeTransform: {fileID: 0}
+  componentState: 0
+--- !u!114 &143484956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143484951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a314ba789d71b4aa199a399610c6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &160388315
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,9 +586,11 @@ GameObject:
   - component: {fileID: 162248797}
   - component: {fileID: 162248798}
   - component: {fileID: 162248799}
-  m_Layer: 0
-  m_Name: pnt3
-  m_TagString: Untagged
+  - component: {fileID: 162248801}
+  - component: {fileID: 162248800}
+  m_Layer: 9
+  m_Name: Wire
+  m_TagString: ElectricalComponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -588,8 +632,34 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.63, y: 1, z: 1}
-  m_Center: {x: -0.99, y: 0, z: 0}
+  m_Size: {x: 3.2, y: 1, z: 1}
+  m_Center: {x: -1.72, y: 0, z: 0}
+--- !u!114 &162248800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162248796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367922edaf9f6f947acecf7371839387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeTransform: {fileID: 0}
+  componentState: 0
+--- !u!114 &162248801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162248796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a314ba789d71b4aa199a399610c6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &182617466
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,8 +2679,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.29, y: 1, z: 1}
-  m_Center: {x: -0.93, y: 0, z: 0}
+  m_Size: {x: 2.61, y: 1, z: 1}
+  m_Center: {x: -1.8, y: 0, z: 0}
 --- !u!1 &623661968
 GameObject:
   m_ObjectHideFlags: 0
@@ -4161,6 +4231,91 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &971504651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 971504652}
+  - component: {fileID: 971504656}
+  - component: {fileID: 971504655}
+  - component: {fileID: 971504654}
+  - component: {fileID: 971504653}
+  m_Layer: 9
+  m_Name: Wire
+  m_TagString: ElectricalComponent
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &971504652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971504651}
+  m_LocalRotation: {x: -0, y: 0.70941263, z: -0, w: 0.70479345}
+  m_LocalPosition: {x: 4.74, y: 2.7600002, z: 1.77}
+  m_LocalScale: {x: 0.42798713, y: 1, z: 0.63866}
+  m_Children: []
+  m_Father: {fileID: 2122514652}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 90.374, z: 0}
+--- !u!114 &971504653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971504651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367922edaf9f6f947acecf7371839387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeTransform: {fileID: 0}
+  componentState: 0
+--- !u!114 &971504654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971504651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a314ba789d71b4aa199a399610c6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &971504655
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971504651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.29, y: 1, z: 1}
+  m_Center: {x: -0.93, y: 0, z: 0}
+--- !u!122 &971504656
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971504651}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4280090368
+  m_Size: 0.5
 --- !u!1 &997209154
 GameObject:
   m_ObjectHideFlags: 0
@@ -6146,6 +6301,91 @@ Transform:
   m_Father: {fileID: 6469170873564790486}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1588684713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1588684714}
+  - component: {fileID: 1588684718}
+  - component: {fileID: 1588684717}
+  - component: {fileID: 1588684716}
+  - component: {fileID: 1588684715}
+  m_Layer: 9
+  m_Name: Wire
+  m_TagString: ElectricalComponent
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1588684714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588684713}
+  m_LocalRotation: {x: -0, y: 0.70941263, z: -0, w: 0.70479345}
+  m_LocalPosition: {x: -4.09, y: 2.7600002, z: 4.37}
+  m_LocalScale: {x: 0.54033375, y: 1, z: 0.63866}
+  m_Children: []
+  m_Father: {fileID: 2122514652}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 90.374, z: 0}
+--- !u!114 &1588684715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588684713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367922edaf9f6f947acecf7371839387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeTransform: {fileID: 0}
+  componentState: 0
+--- !u!114 &1588684716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588684713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a314ba789d71b4aa199a399610c6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1588684717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588684713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.29, y: 1, z: 1}
+  m_Center: {x: -0.93, y: 0, z: 0}
+--- !u!122 &1588684718
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588684713}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4280090368
+  m_Size: 0.5
 --- !u!1 &1625585378
 GameObject:
   m_ObjectHideFlags: 0
@@ -6586,6 +6826,91 @@ Transform:
   m_Father: {fileID: 6469170873564790486}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1767361065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767361066}
+  - component: {fileID: 1767361070}
+  - component: {fileID: 1767361069}
+  - component: {fileID: 1767361068}
+  - component: {fileID: 1767361067}
+  m_Layer: 9
+  m_Name: Wire
+  m_TagString: ElectricalComponent
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1767361066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767361065}
+  m_LocalRotation: {x: -0, y: 0.70941263, z: -0, w: 0.70479345}
+  m_LocalPosition: {x: -4.11, y: 2.7600002, z: 1.32}
+  m_LocalScale: {x: 0.50288486, y: 1, z: 0.63866}
+  m_Children: []
+  m_Father: {fileID: 2122514652}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 90.374, z: 0}
+--- !u!114 &1767361067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767361065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367922edaf9f6f947acecf7371839387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeTransform: {fileID: 0}
+  componentState: 0
+--- !u!114 &1767361068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767361065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a314ba789d71b4aa199a399610c6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1767361069
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767361065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.29, y: 1, z: 1}
+  m_Center: {x: -0.93, y: 0, z: 0}
+--- !u!122 &1767361070
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767361065}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4280090368
+  m_Size: 0.5
 --- !u!1 &1777825382
 GameObject:
   m_ObjectHideFlags: 0
@@ -6721,7 +7046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1820007953
 Transform:
   m_ObjectHideFlags: 0
@@ -6925,6 +7250,91 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1895000532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1895000533}
+  - component: {fileID: 1895000537}
+  - component: {fileID: 1895000536}
+  - component: {fileID: 1895000535}
+  - component: {fileID: 1895000534}
+  m_Layer: 9
+  m_Name: Wire
+  m_TagString: ElectricalComponent
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1895000533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895000532}
+  m_LocalRotation: {x: -0, y: 0.70941263, z: -0, w: 0.70479345}
+  m_LocalPosition: {x: 4.76, y: 2.7600002, z: 4.59}
+  m_LocalScale: {x: 0.42798713, y: 1, z: 0.63866}
+  m_Children: []
+  m_Father: {fileID: 2122514652}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 90.374, z: 0}
+--- !u!114 &1895000534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895000532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367922edaf9f6f947acecf7371839387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeTransform: {fileID: 0}
+  componentState: 0
+--- !u!114 &1895000535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895000532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a314ba789d71b4aa199a399610c6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1895000536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895000532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.29, y: 1, z: 1}
+  m_Center: {x: -0.54, y: 0, z: 0}
+--- !u!122 &1895000537
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895000532}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4280090368
+  m_Size: 0.5
 --- !u!1 &1921746066
 GameObject:
   m_ObjectHideFlags: 0
@@ -7144,9 +7554,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1955924346}
   - component: {fileID: 1955924347}
-  m_Layer: 0
-  m_Name: pnt1
-  m_TagString: Untagged
+  - component: {fileID: 1955924348}
+  - component: {fileID: 1955924350}
+  - component: {fileID: 1955924349}
+  m_Layer: 9
+  m_Name: Wire
+  m_TagString: ElectricalComponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7177,6 +7590,45 @@ Halo:
     serializedVersion: 2
     rgba: 4280090368
   m_Size: 0.5
+--- !u!65 &1955924348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955924345}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.02, y: 1, z: 1}
+  m_Center: {x: 2.11, y: 0, z: 0}
+--- !u!114 &1955924349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955924345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367922edaf9f6f947acecf7371839387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeTransform: {fileID: 0}
+  componentState: 0
+--- !u!114 &1955924350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955924345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a314ba789d71b4aa199a399610c6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1958211619
 GameObject:
   m_ObjectHideFlags: 0
@@ -7966,6 +8418,10 @@ Transform:
   - {fileID: 617521729}
   - {fileID: 1955924346}
   - {fileID: 143484952}
+  - {fileID: 1588684714}
+  - {fileID: 1767361066}
+  - {fileID: 1895000533}
+  - {fileID: 971504652}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
