@@ -5,6 +5,7 @@ using UnityEngine;
 public class Battery : MonoBehaviour
 {
     public bool flipped = false;
+    public bool isActive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +40,7 @@ public class Battery : MonoBehaviour
 
         GameObject ringSelector = GameObject.Find("RingSelector");
         ringSelector.GetComponent<Renderer>().enabled = false;
-
+        isActive = true;
         BlackBoardModule.getInstance().showNextButton();
 
     }
@@ -48,13 +49,10 @@ public class Battery : MonoBehaviour
     public void flipBattery()
     {
         //flip only if battery is active ...
-        Debug.Log("flip this ...");
         flipped = !flipped;
 
         zAxis = -zAxis;
         transform.Rotate(0f, 0f, zAxis, Space.Self);
-
-        Debug.Log("Current rotation values\n x-" + transform.localRotation.x + " y- " + transform.localRotation.y + " z- " + transform.localRotation.z);
 
         ElectricalCircuitBuildingModule.getInstance().onBatteryFlipped();
 

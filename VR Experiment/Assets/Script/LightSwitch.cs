@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightSwitch : MonoBehaviour
 {
 
-    //public TextMesh textStatusInfo;
+    public TextMesh textStatusInfo;
     
     public enum SwitchState
     {
@@ -70,12 +70,12 @@ public class LightSwitch : MonoBehaviour
             if (switchState == SwitchState.off)
             {
                 switchState = SwitchState.on;
-                //textStatusInfo.text = "ON";
+                textStatusInfo.text = "ON";
             }
             else
             {
                 switchState = SwitchState.off;
-                //textStatusInfo.text = "OFF";
+                textStatusInfo.text = "OFF";
             }
         }else
         {

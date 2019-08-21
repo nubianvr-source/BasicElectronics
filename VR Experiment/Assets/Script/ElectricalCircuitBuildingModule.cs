@@ -131,6 +131,12 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
 
                     if (switchState == LightSwitch.SwitchState.on)
                     {
+                        if (! battery.GetComponent<Battery>().isActive)
+                            return;
+                    }
+
+                    if (switchState == LightSwitch.SwitchState.on)
+                    {
                         if (battery.GetComponent<Battery>().flipped)
                         {
                             return;

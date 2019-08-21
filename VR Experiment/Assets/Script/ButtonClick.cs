@@ -22,16 +22,19 @@ public class ButtonClick : MonoBehaviour
                 BlackBoardModule bbm = BlackBoardModule.getInstance();
                 bbm.hideNextButton();
                 bbm.nextDemo();
-                
-                break;
+
+                return;
 
             case "ToggleSwitch":
                 //switch clicked on ...
                 //find the switch in the scene ...
+
+                //check if battery is in there ...
+
                 GameObject lightswitch = GameObject.Find(ElectricalCircuitBuildingModule.LIGHTSWITCH+"(Clone)");
                 lightswitch.GetComponent<LightSwitch>().onSwitchToggle();
 
-                break;
+                return;
 
             case "flip_battery":
                 if (BlackBoardModule.getInstance().content_stage >= 5)
@@ -39,8 +42,8 @@ public class ButtonClick : MonoBehaviour
                     GameObject myBattery = GameObject.Find(ElectricalCircuitBuildingModule.BATTERY + "(Clone)");
                     myBattery.GetComponent<Battery>().flipBattery();
                 }
-                
-                break;
+
+                return;
 
             case "flip_diode":
 
@@ -55,12 +58,11 @@ public class ButtonClick : MonoBehaviour
 
                 }
 
-
-                break;
-
-            default:
-                break;
+                return;
         }
+
+
+        //check to see what kinda buttons these are ...
 
         if (BlackBoardModule.getInstance().content_stage == 0)
         {
