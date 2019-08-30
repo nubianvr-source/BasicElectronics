@@ -118,25 +118,23 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
             {
                 if (electricalComponent2.componentState == ElectricalComponent.ComponentState.active)
                 {
-                    GameObject diode = GameObject.Find(ElectricalCircuitBuildingModule.DIODE + "(Clone)");
-                    GameObject battery = GameObject.Find(ElectricalCircuitBuildingModule.BATTERY + "(Clone)");
-
+                    GameObject diode = GameObject.Find(DIODE + "(Clone)");
+                    GameObject battery = GameObject.Find(BATTERY + "(Clone)");
                     if (switchState == LightSwitch.SwitchState.on)
                     {
+                        if (!battery.GetComponent<Battery>().isActive)
+                            return;
+                   
+                        if ((diode.GetComponent<Diode>().flipped) && (battery.GetComponent<Battery>().flipped)){
+                            activateCircuit(LightSwitch.SwitchState.on);
+                            return;
+                        }
+                    
                         if (diode.GetComponent<Diode>().flipped)
                         {
                             return;
                         }
-                    }
-
-                    if (switchState == LightSwitch.SwitchState.on)
-                    {
-                        if (! battery.GetComponent<Battery>().isActive)
-                            return;
-                    }
-
-                    if (switchState == LightSwitch.SwitchState.on)
-                    {
+                   
                         if (battery.GetComponent<Battery>().flipped)
                         {
                             return;
@@ -144,31 +142,34 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
                     }
                 }
             }
-            
-
-            Color c1 = Color.green;
-            Color c2 = Color.red;
-            if (switchState == LightSwitch.SwitchState.on)
-            {
-                Debug.Log("Wire is active!!!");
-                circuitState = CircuitState.active;
-                wireLineRenderer.startColor = c1;
-                wireLineRenderer.endColor = c1;
-                //turnLED_On();
-            }
-            else
-            {
-                Debug.Log("Wire is Inactive");
-                circuitState = CircuitState.inactive;
-                wireLineRenderer.startColor = c2;
-                wireLineRenderer.endColor = c2;
-                //turnLED_Off();
-            }
-
-            turnLEDOnOff(switchState);
-
+            activateCircuit(switchState);   
         }
      
+    }
+
+    public void activateCircuit(LightSwitch.SwitchState switchState)
+    {
+        Color c1 = Color.green;
+        Color c2 = Color.red;
+        if (switchState == LightSwitch.SwitchState.on)
+        {
+            Debug.Log("Wire is active!!!");
+            circuitState = CircuitState.active;
+            wireLineRenderer.startColor = c1;
+            wireLineRenderer.endColor = c1;
+            //turnLED_On();
+        }
+        else
+        {
+            Debug.Log("Wire is Inactive");
+            circuitState = CircuitState.inactive;
+            wireLineRenderer.startColor = c2;
+            wireLineRenderer.endColor = c2;
+            //turnLED_Off();
+        }
+
+        turnLEDOnOff(switchState);
+
     }
 
     public void turnLEDOnOff(LightSwitch.SwitchState switchState)
@@ -195,11 +196,26 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
             Color c1 = Color.green;
             Color c2 = Color.red;
             GameObject diode = GameObject.Find(DIODE + "(Clone)");
+            GameObject battery = GameObject.Find(BATTERY + "(Clone)");
+
+            if ((battery.GetComponent<Battery>().flipped) && (diode.GetComponent<Diode>().flipped))
+            {
+                activateCircuit(LightSwitch.SwitchState.on);
+                return;
+            }
+
             if (diode.GetComponent<Diode>().flipped)
             {
                 //turn off the circuit ...
-                Debug.Log("Wire is Inactive");
                 circuitState = CircuitState.inactive;
+                wireLineRenderer.startColor = c2;
+                wireLineRenderer.endColor = c2;
+
+                turnLEDOnOff(LightSwitch.SwitchState.off);
+            }
+            else if ((! diode.GetComponent<Diode>().flipped) && (battery.GetComponent<Battery>().flipped))
+            {
+                circuitState = CircuitState.active;
                 wireLineRenderer.startColor = c2;
                 wireLineRenderer.endColor = c2;
 
@@ -207,7 +223,6 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
             }
             else
             {
-                Debug.Log("Wire is active!!!");
                 circuitState = CircuitState.active;
                 wireLineRenderer.startColor = c1;
                 wireLineRenderer.endColor = c1;
@@ -215,13 +230,12 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
                 turnLEDOnOff(LightSwitch.SwitchState.on);
             }
         }
-
-       
     }
 
     public void onBatteryFlipped()
     {
         GameObject lightswitch = GameObject.Find(LIGHTSWITCH + "(Clone)");
+        
         LightSwitch ls = lightswitch.GetComponent<LightSwitch>();
 
         if (ls.switchState == LightSwitch.SwitchState.on)
@@ -229,11 +243,26 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
             Color c1 = Color.green;
             Color c2 = Color.red;
             GameObject battery = GameObject.Find(BATTERY + "(Clone)");
+            GameObject diode = GameObject.Find(DIODE + "(Clone)");
+
+            if ((battery.GetComponent<Battery>().flipped) && (diode.GetComponent<Diode>().flipped))
+            {
+                activateCircuit(LightSwitch.SwitchState.on);
+                return;
+            }
+
             if (battery.GetComponent<Battery>().flipped)
             {
                 //turn off the circuit ...
-                Debug.Log("Wire is Inactive");
                 circuitState = CircuitState.inactive;
+                wireLineRenderer.startColor = c2;
+                wireLineRenderer.endColor = c2;
+
+                turnLEDOnOff(LightSwitch.SwitchState.off);
+            }
+            else if ((diode.GetComponent<Diode>().flipped) && (! battery.GetComponent<Battery>().flipped))
+            {
+                circuitState = CircuitState.active;
                 wireLineRenderer.startColor = c2;
                 wireLineRenderer.endColor = c2;
 
@@ -241,7 +270,6 @@ public class ElectricalCircuitBuildingModule : MonoBehaviour
             }
             else
             {
-                Debug.Log("Wire is active!!!");
                 circuitState = CircuitState.active;
                 wireLineRenderer.startColor = c1;
                 wireLineRenderer.endColor = c1;

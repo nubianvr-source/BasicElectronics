@@ -28,14 +28,14 @@ namespace Tests
 
             //check if light bulb answer is correct ...
             
-            BlackBoardModule bbm = BlackBoardModule.getInstance();
-            string lightBulbString = "btn_light_bulb_q1";
+            //BlackBoardModule bbm = BlackBoardModule.getInstance();
+            //string lightBulbString = "btn_light_bulb_q1";
 
-            GameObject buttonComponent = new GameObject("lightBulbString");
-            bbm.clickOnWhichCompoent(buttonComponent);
+            //GameObject buttonComponent = new GameObject("lightBulbString");
+            //bbm.clickOnWhichCompoent(buttonComponent);
 
-            string expectedAnswer = bbm.currentResponseExpected;
-            Assert.AreEqual(expectedAnswer, lightBulbString);
+            //string expectedAnswer = bbm.currentResponseExpected;
+            //Assert.AreEqual(expectedAnswer, lightBulbString);
 
 
 
