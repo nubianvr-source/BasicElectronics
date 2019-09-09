@@ -45,5 +45,11 @@ namespace Tests
 
             yield return null;
         }
+
+        [UnityTest]
+        public IEnumerator testAnotherFunction()
+        {
+            yield return null;
+        }
     }
 }
