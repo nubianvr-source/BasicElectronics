@@ -13,9 +13,17 @@ namespace Tests
         [Test]
         public void MyNubianTestsSimplePasses()
         {
+           
+
+        }
+
+        [Test]
+        public void checkIfValueIsTrue()
+        {
             // Use the Assert class to test conditions
-
-
+            QuestionModule qm = new QuestionModule();
+            bool response = qm.functionToTest();
+            Assert.IsTrue(response);
         }
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
