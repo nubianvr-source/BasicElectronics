@@ -116,15 +116,15 @@ public class ButtonClick : MonoBehaviour
 
         if (BlackBoardModule.getInstance().content_stage == 2)
         {
-            
             responseText.SetActive(true);
-            
+            resetButtonMaterial();
+
             if (this.gameObject.name == "add_battery_q3")
             {
 
                 //set the yellow correct response material to the response panel
                 this.swapToCorrectMaterial();
-                this.showCorrectAnswerResponse();
+                this.showCorrectAnswerResponse("Correct, a battery will \nprovide the current required \nto power the circuit");
 
                 GameObject nextButton = GameObject.Find("ClickForNext");
                 MeshRenderer[] meshrenderers = nextButton.GetComponentsInChildren<MeshRenderer>();
@@ -132,17 +132,20 @@ public class ButtonClick : MonoBehaviour
                 {
                     mr.enabled = true;
                 }
+                BlackBoardModule.getInstance().showNextButton();
             }
             else 
 
             if (this.gameObject.name == "add_resistor_q3")
             {
+                this.swapToIncorrectMaterial();
                 this.showIncorrectAnswerResponse("Incorrect, a resistor is \nused to reduce the current \nflow in a circuit");
                 
             }else
 
             if (this.gameObject.name == "add_capacitor_q3")
             {
+                this.swapToIncorrectMaterial();
                 this.showIncorrectAnswerResponse("Incorrect, a capacitor is \nused to store current flow \nin a circuit");
             }
             else
@@ -154,61 +157,89 @@ public class ButtonClick : MonoBehaviour
         if (BlackBoardModule.getInstance().content_stage == 7)
         {
             responseText.SetActive(true);
-            
-            Debug.Log("Stage 7 actions we go we go");
+            resetButtonMaterial();
+
             if (this.gameObject.name == "terminal_wrong_q8")
             {
-                Debug.Log("First option correct?");
-                responseText.GetComponent<TextMesh>().text = "Correct, a battery will provide \nthe current required to power \nthe circuit";
+                //set the yellow correct response material to the response panel
+                this.swapToCorrectMaterial();
+                this.showCorrectAnswerResponse("Correct, a battery will provide \nthe current required to power \nthe circuit");
+
+                GameObject nextButton = GameObject.Find("ClickForNext");
+                MeshRenderer[] meshrenderers = nextButton.GetComponentsInChildren<MeshRenderer>();
+                foreach (MeshRenderer mr in meshrenderers)
+                {
+                    mr.enabled = true;
+                }
 
                 BlackBoardModule.getInstance().showNextButton();
+
             }
             else
             if (this.gameObject.name == "wrong_battery_q8")
             {
-                responseText.GetComponent<TextMesh>().text = "Incorrect, a 3 volts battery generates \nenough electricity to light up \na 2 volts bulb";
+                this.swapToIncorrectMaterial();
+                this.showIncorrectAnswerResponse("Incorrect, a 3 volts battery generates \nenough electricity to light up \na 2 volts bulb");
+
             }
             else
             if (this.gameObject.name == "switch_off_q8")
             {
-                responseText.GetComponent<TextMesh>().text = "Incorrect, remember you turned on \nthe switch to activate the circuit.";
+                this.swapToIncorrectMaterial();
+                this.showIncorrectAnswerResponse("Incorrect, remember you turned on \nthe switch to activate the circuit.");
             }
         }
 
         if (BlackBoardModule.getInstance().content_stage == 8)
         {
             responseText.SetActive(true);
-            
+            resetButtonMaterial();
+
             if (this.gameObject.name == "blue_button_press_q9")
             {
-                responseText.GetComponent<TextMesh>().text = "Correct, flipping the terminal \nwill allow the current flow";
+                this.swapToCorrectMaterial();
+                this.showCorrectAnswerResponse("Correct, flipping the terminal \nwill allow the current flow");
+
                 BlackBoardModule.getInstance().showNextButton();
             }
             else
            if (this.gameObject.name == "removing_battery_q9")
             {
-                responseText.GetComponent<TextMesh>().text = "Incorrect, that will remove the \nsource of electrical energy";
+                this.swapToIncorrectMaterial();
+                this.showIncorrectAnswerResponse("Incorrect, that will remove the \nsource of electrical energy");
+                
             }
             else
            if (this.gameObject.name == "turn_off_switch_q9")
             {
-                responseText.GetComponent<TextMesh>().text = "Incorrect, turning off the switch\n will prevent current from flowing \nin the circuit";
+                this.swapToIncorrectMaterial();
+                this.showIncorrectAnswerResponse("Incorrect, turning off the switch\n will prevent current from flowing \nin the circuit");
             }
         }
     }
 
     public void swapToCorrectMaterial()
     {
-
-        GameObject button = this.gameObject;
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = correctMat;
         
     }
 
-    public void showCorrectAnswerResponse()
+    public void swapToIncorrectMaterial()
     {
-        responseText.GetComponent<TextMesh>().text = "Correct, a battery will \nprovide the current required \nto power the circuit";
+        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer.material = incorrectMat;
+    }
+
+    public void resetButtonMaterial()
+    {
+        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer.material = regularMat;
+    }
+
+    public void showCorrectAnswerResponse(string response)
+    {
+        responseText.GetComponent<TextMesh>().text = response;
 
         GameObject responsePanel = responseText.transform.parent.gameObject;
         responsePanel.SetActive(true);
@@ -216,6 +247,8 @@ public class ButtonClick : MonoBehaviour
         meshRenderer.material = correctPanel;
         
     }
+
+   
 
     public void showIncorrectAnswerResponse(string response)
     {

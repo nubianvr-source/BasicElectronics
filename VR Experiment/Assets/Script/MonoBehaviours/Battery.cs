@@ -6,6 +6,7 @@ public class Battery : MonoBehaviour
 {
     public bool flipped = false;
     public bool isActive = false;
+    float speed = 100f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,8 @@ public class Battery : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (! isActive)
+            transform.Rotate(speed * Time.deltaTime, speed * Time.deltaTime, 0f);
     }
 
     public void actionPerformedOnClick()
@@ -26,9 +28,7 @@ public class Battery : MonoBehaviour
             //the ring around that guy  and a click on that board brings the battery ...
             GameObject ringSelector = GameObject.Find("RingSelector");
             ringSelector.GetComponent<Renderer>().enabled = true;
-
-            //this.componentActiveState = ComponentActiveStates.active;
-
+            
         }
     }
 
