@@ -75,7 +75,31 @@ The sample structure of a Unit outlined below
         "question":{
           "question_text": "How many terminals does a dry cell have",
           "possible_answers":[
-            "one", "three", "five", "two", "deux", "multiple"
+            {
+              "answer": "one",
+              "state": "incorrect",
+              "reason": "some reason goes here"
+            }, 
+            {
+              "answer": "two",
+              "state": "correct",
+              "reason": "some reason goes here"
+            },
+            {
+              "answer": "five",
+              "state": "incorrect",
+              "reason": "some reason goes here"
+            },
+            {
+              "answer": "deux",
+              "state": "correct",
+              "reason": "some reason goes here"
+            },
+            {
+              "answer": "forty",
+              "state": "incorrect",
+              "reason": "some reason goes here"
+            }
             ],
           "possible_correct_answers":[3, 4],
           "question_type":"regular/intervention",
