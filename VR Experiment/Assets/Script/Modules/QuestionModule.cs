@@ -6,10 +6,21 @@ public class QuestionModule
 {
 
     private string question;
-    private string[] possibleCorrectAnswers;
+    private Answer[] possibleCorrectAnswers;
     private int[] answerIndexes;
     private bool answered_state = false;
     private bool skippable = true;
+
+    enum QuestionType
+    {
+        regular,
+        intervention
+    };
+
+    QuestionType questionType;
+
+    int pointEarned;
+
 
     public QuestionModule(bool skippable = true)
     {
