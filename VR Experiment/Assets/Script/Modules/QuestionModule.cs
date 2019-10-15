@@ -17,10 +17,15 @@ public class QuestionModule
         intervention
     };
 
+    enum MCQ_Type
+    {
+        revised_mcq,
+        select_all_that_apply,
+        multiple_true_false_question
+    };
+
     QuestionType questionType;
-
     int pointEarned;
-
 
     public QuestionModule(bool skippable = true)
     {

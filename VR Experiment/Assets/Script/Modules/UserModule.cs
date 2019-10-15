@@ -19,6 +19,19 @@ namespace Modules
             private int _challengesCompleted;
             private int _activities_completed;
             private int _total_completed;
+
+            public int numQuestionAttetmps
+            {
+                get
+                {
+                    return _numQuestionAttempts;
+                }
+                set
+                {
+                    _numQuestionAttempts = value;
+                }
+            }
+
         }
 
 
@@ -44,10 +57,18 @@ namespace Modules
             }
         }
 
+        void createDummyUser()
+        {
+            
+        }
+
         public static UserModule getUserInstance()
         {
             //do WWW request here ...
-            return null;
+            UserModule user = new UserModule();
+            user.createDummyUser();
+            
+            return user;
         }
 
     }
