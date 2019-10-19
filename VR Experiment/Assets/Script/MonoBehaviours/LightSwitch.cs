@@ -43,7 +43,7 @@ public class LightSwitch : MonoBehaviour
 
         if (isCorrect == true)
         {
-            BlackBoardModule.getInstance().getBacktoBoardContent1();
+            //BlackBoardModule.getInstance().getBacktoBoardContent1();
         }
         else
         {

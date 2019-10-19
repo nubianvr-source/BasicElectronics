@@ -19,7 +19,7 @@ public class ClickToAddBatteryToPosition : MonoBehaviour
     public void addToPosition()
     {
         GameObject battery = GameObject.Find(ElectricalCircuitBuildingModule.BATTERY + "(Clone)");
-        battery.GetComponent<Battery>().moveToPosition();
+        //battery.GetComponent<Battery>().moveToPosition();
 
     }
 }

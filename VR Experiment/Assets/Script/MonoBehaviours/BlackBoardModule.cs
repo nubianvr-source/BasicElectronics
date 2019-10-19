@@ -33,11 +33,12 @@ public class BlackBoardModule : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boardContent[content_stage].SetActive(true);
-        previousBoard = boardContent[content_stage];
+        //boardContent[content_stage].SetActive(true);
+        //previousBoard = boardContent[content_stage];
         
     }
 
+    /*
     public void nextDemo()
     {
         content_stage++;
@@ -149,5 +150,5 @@ public class BlackBoardModule : MonoBehaviour
 
 
     }
-   
+   */
 }

@@ -12,7 +12,7 @@ public class NextDemo : MonoBehaviour
         //electricalCircuitModule.callCircuitDone();
 
         BlackBoardModule bbm = BlackBoardModule.getInstance();
-        bbm.nextDemo();
+        //bbm.nextDemo();
 
 
 

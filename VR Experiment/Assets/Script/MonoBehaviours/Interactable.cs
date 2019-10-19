@@ -58,7 +58,7 @@ public class Interactable : MonoBehaviour
             break;
 
             case "Position":
-
+                /*
                 if (BlackBoardModule.getInstance().content_stage == 4)
                 {
                     //GameObject responseText = GameObject.Find("response_text");
@@ -86,7 +86,7 @@ public class Interactable : MonoBehaviour
                     }
 
                 }
-
+                */
                 break;
 
             case "ButtonInteraction":

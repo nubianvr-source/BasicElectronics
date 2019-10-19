@@ -20,6 +20,7 @@ public class Battery : MonoBehaviour
             transform.Rotate(speed * Time.deltaTime, speed * Time.deltaTime, 0f);
     }
 
+    /*
     public void actionPerformedOnClick()
     {
         Debug.Log("content stage " + BlackBoardModule.getInstance().content_stage);
@@ -57,5 +58,5 @@ public class Battery : MonoBehaviour
         ElectricalCircuitBuildingModule.getInstance().onBatteryFlipped();
 
     }
-    
+    */
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using Modules;
+
 
 public class Main : MonoBehaviour
 {
@@ -10,14 +10,17 @@ public class Main : MonoBehaviour
     UnitModule unit_module;
     void Awake()
     {
-        unit_module  = new UnitModule();
-        unit_module.init();
+        
         
     }
 
     void Start()
     {
-        
+        Debug.Log("Main Code has started Running...");
+        unit_module = UnitModule.Instance;
+        unit_module.init();
+        unit_module.begin();
+
         //Get Users
         //authenticate with pin
         //
@@ -46,4 +49,5 @@ public class Main : MonoBehaviour
     {
         
     }
+
 }

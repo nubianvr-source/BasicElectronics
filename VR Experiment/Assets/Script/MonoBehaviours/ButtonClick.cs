@@ -12,7 +12,7 @@ public class ButtonClick : MonoBehaviour
     ElectricalCircuitBuildingModule electricalCircuitModule;
     Material correctMat, incorrectMat, hoveredMat, regularMat;
     Material correctPanel, incorrectPanel;
-
+    /*
     void Start()
     {
         //in the future refactoring this has to be done in runtime/main.cs file
@@ -25,10 +25,10 @@ public class ButtonClick : MonoBehaviour
         incorrectPanel = (Material)Resources.Load("Materials/Panels/incorrect_panel");
         
     }
-
+    */
     public void actionPerformedClick()
     {
-        string buttonName = this.gameObject.name;
+      /*  string buttonName = this.gameObject.name;
         switch (buttonName)
         {
             case "ClickForNext":
@@ -36,8 +36,8 @@ public class ButtonClick : MonoBehaviour
                 responseText.SetActive(false);
                 
                 BlackBoardModule bbm = BlackBoardModule.getInstance();
-                bbm.hideNextButton();
-                bbm.nextDemo();
+                //bbm.hideNextButton();
+                //bbm.nextDemo();
 
                 return;
 
@@ -56,7 +56,7 @@ public class ButtonClick : MonoBehaviour
                 if (BlackBoardModule.getInstance().content_stage >= 5)
                 {
                     GameObject myBattery = GameObject.Find(ElectricalCircuitBuildingModule.BATTERY + "(Clone)");
-                    myBattery.GetComponent<Battery>().flipBattery();
+                    //myBattery.GetComponent<Battery>().flipBattery();
                 }
 
                 return;
@@ -216,6 +216,7 @@ public class ButtonClick : MonoBehaviour
                 this.showIncorrectAnswerResponse("Incorrect, turning off the switch\n will prevent current from flowing \nin the circuit");
             }
         }
+        */
     }
 
     public void swapToCorrectMaterial()
@@ -248,7 +249,7 @@ public class ButtonClick : MonoBehaviour
         
     }
 
-   
+   /*
 
     public void showIncorrectAnswerResponse(string response)
     {
@@ -259,5 +260,5 @@ public class ButtonClick : MonoBehaviour
         meshRenderer.material = incorrectPanel;
 
     }
-
+    */
 }

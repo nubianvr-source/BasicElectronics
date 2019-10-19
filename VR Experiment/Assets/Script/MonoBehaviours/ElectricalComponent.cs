@@ -17,7 +17,7 @@ public class ElectricalComponent : MonoBehaviour
     //you need to know where to go when you are clicked on ...
     public void actionPerformedOnClick()
     {
-        
+        /*
         Debug.Log("Electrical component clicked "+ this.gameObject.name);
         //transform.position = activeTransform.position;
         //transform.localRotation = activeTransform.localRotation;
@@ -70,6 +70,7 @@ public class ElectricalComponent : MonoBehaviour
 
 
         //componentState = ComponentState.active;
+        */
         
     }
 

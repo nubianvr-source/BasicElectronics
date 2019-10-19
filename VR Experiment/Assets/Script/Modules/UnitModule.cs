@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 
 
-[System.Serializable]
+//[System.Serializable]
 public class UnitModule
 {
 
@@ -12,8 +12,27 @@ public class UnitModule
     public string description;
     public int unit_number;
     public UnitContent unit_content;
-    UnitModule unitModule;
+    PrefabManager prefabMgr;
+    MainManager mainMgr;
 
+    private static UnitModule instance;
+
+    private UnitModule()
+    {
+    }
+
+    public static UnitModule Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new UnitModule();
+            }
+            return instance;
+        }
+    }
+    
     public class UnitContent
     {
         public string[] info_dialog;
@@ -27,26 +46,30 @@ public class UnitModule
 
     public void init()
     {
-        string path = Application.streamingAssetsPath + "/Unit.json";
-        string json_data = File.ReadAllText(path);
-        unitModule = JsonUtility.FromJson<UnitModule>(json_data);
+        Debug.Log("Init Called!!!");
+        mainMgr = MainManager.getInstance();
+        mainMgr.callSampleFunction();
+        //mainMgr.getDataFromServer("localhost/nubian_web/Unit.json");
+
+        prefabMgr = PrefabManager.getInstance();
+        prefabMgr.callSomeFunction();
+        
 
     }
 
     public void begin()
     {
+        Debug.Log("begin called ");
         //Load title First!
         loadTitle();
-
-        //load the first content ...
 
     }
 
     public void loadTitle()
     {
-        //load from the prefab manager ...
+        Debug.Log("Load the title");
+        prefabMgr.showTitle("Test\nTitle","Unit_Module","Some description goes here!");
         
-
     }
 }
 
@@ -60,12 +83,10 @@ public class MediaContent
 
 public class TitleInfo
 {
-
-    string title;
-    string unit_info;
-    string unit_desc;
-    string unit_graphic;
-    
+    public string title = "Basic Electronics";
+    public string unit_info = "Unit 3: Diodes";
+    public string unit_desc = "Some nice info about Diodes goes here!";
+    public string unit_graphic;
 }
 
 /*

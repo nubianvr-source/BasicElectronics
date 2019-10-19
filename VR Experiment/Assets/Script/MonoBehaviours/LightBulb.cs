@@ -20,7 +20,7 @@ public class LightBulb : MonoBehaviour
         {
             lightState = LightState.on;
             turnOn();
-            BlackBoardModule.getInstance().showNextButton();
+            //BlackBoardModule.getInstance().showNextButton();
         }
         else
         {
