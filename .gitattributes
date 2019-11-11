@@ -1,0 +1,12 @@
+VR[[:space:]]Experiment/Assets/StreamingAssets/vr_flashlight.mp4 filter=lfs diff=lfs merge=lfs -text
+VR[[:space:]]Experiment/Assets/StreamingAssets/Diodes[[:space:]]Animatic.mp4 filter=lfs diff=lfs merge=lfs -text
+VR[[:space:]]Experiment/Library/metadata/ filter=lfs diff=lfs merge=lfs -text
+VR[[:space:]]Experiment/Assets/StreamingAssets filter=lfs diff=lfs merge=lfs -text
+VR[[:space:]]Experiment/Library/PlayerDataCache/Android/Data/sharedassets0.assets filter=lfs diff=lfs merge=lfs -text
+VR[[:space:]]Experiment/Library/PlayerDataCache/Android/Data/b3e87b1024f5fa8408d004b398e7b0c0 filter=lfs diff=lfs merge=lfs -text
+VR[[:space:]]Experiment/Library/PlayerDataCache/Android/Data/Managed/mscorlib.dll filter=lfs diff=lfs merge=lfs -text
+VR[[:space:]]Experiment/Library/PlayerDataCache/Android/Data/Managed/ filter=lfs diff=lfs merge=lfs -text
+VR[[:space:]]Experiment/Library/ filter=lfs diff=lfs merge=lfs -text
+VR[[:space:]]Experiment/Temp/ filter=lfs diff=lfs merge=lfs -text
+VR[[:space:]]Experiment/Library/metadata/ filter=lfs diff=lfs merge=lfs -text
+VR[[:space:]]Experiment/Temp/gradleOut/ filter=lfs diff=lfs merge=lfs -text

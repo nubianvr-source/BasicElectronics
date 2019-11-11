@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 69227faebb759be4a8c79d64509c089b
+guid: 9ec8f93e1cd69ae44b2c66316ff1e76e
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,15 +12,16 @@ TrueTypeFontImporter:
   fontNames:
   - Objectivity
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 15487350914f6904289acd4f8f18a4b9, type: 3}
-  - {fileID: 12800000, guid: 2a7dfc908bff63b4591f310cafc33d13, type: 3}
-  - {fileID: 12800000, guid: 40ab1aa0eb995c74f8761512578b78b5, type: 3}
-  - {fileID: 12800000, guid: 21229cd6080225243989db29b4997958, type: 3}
-  - {fileID: 12800000, guid: 234469a732638a14b999a092acceb8d6, type: 3}
-  - {fileID: 12800000, guid: 5abb59e79b117c345b438bdecd8ffc21, type: 3}
-  - {fileID: 12800000, guid: 0cdfe3594800d424c908d01b4434cf99, type: 3}
-  - {fileID: 12800000, guid: 4b72854d7612da544b01b86327b06223, type: 3}
-  - {fileID: 12800000, guid: 01f12ece935fb8241b55916af2707414, type: 3}
+  - {fileID: 12800000, guid: 5b5fbb13286e06e429d26dbd55b53ec4, type: 3}
+  - {fileID: 12800000, guid: 8cb79b933d3d57a47879ee0243589077, type: 3}
+  - {fileID: 12800000, guid: 31c09da45a5218f4aae6e51081db60e8, type: 3}
+  - {fileID: 12800000, guid: 967de6466c04b6c45ac441bc9accf107, type: 3}
+  - {fileID: 12800000, guid: 44647867941f41841880c9e94d18f7cd, type: 3}
+  - {fileID: 12800000, guid: 12b15ca8bc0d07146950b6b4319a6b46, type: 3}
+  - {fileID: 12800000, guid: 1cb58c39de4aabb429ed45a0e0af366c, type: 3}
+  - {fileID: 12800000, guid: 09c6692ce7de41944bd6c13ff6fb21e5, type: 3}
+  - {fileID: 12800000, guid: 6417821e6a5663544b6f9a4e358a527f, type: 3}
+  - {fileID: 12800000, guid: 1882e94fbc9251b4f9bff2f6730fcf69, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
