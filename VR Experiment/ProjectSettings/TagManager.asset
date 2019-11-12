@@ -3,12 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Terminal
-  - ElectricalComponent
-  - Switch
-  - ButtonInteraction
-  - Position
+  tags: []
   layers:
   - Default
   - TransparentFX
