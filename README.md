@@ -2,6 +2,9 @@
 Setting up the Basic Electronics Demo
 This Demo is a demonstration of an implementation of the Basic Electronics in VR made with the Unity Game Engine and created for the Oculus Go Device. Along with the document is an APK that is going to be transferred to the Oculus Go.
 
+Game Engine
+The version of Unity used for this project is Unity 2018.3.6f1
+
 Windows Users
 Steps to Transferring the APK to the Oculus Go
 Enable Developer Mode
